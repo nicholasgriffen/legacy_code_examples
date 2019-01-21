@@ -1,0 +1,68 @@
+Player entered: . 
+Player expected: continued program execution, feedback from the program regarding the illegal character.
+Player experienced: end of program, java.lang.NumberFormatException. 
+
+copy of stdout 'lein run' to java.lang.NumberFormatExeception: 
+
+Retrieving org/clojure/clojure/1.6.0/clojure-1.6.0.pom from central
+Retrieving org/sonatype/oss/oss-parent/7/oss-parent-7.pom from central
+Retrieving nrepl/nrepl/0.5.3/nrepl-0.5.3.pom from clojars
+Retrieving nrepl/bencode/1.0.0/bencode-1.0.0.pom from clojars
+Retrieving clojure-complete/clojure-complete/0.2.5/clojure-complete-0.2.5.pom from clojars
+Retrieving org/clojure/clojure/1.6.0/clojure-1.6.0.jar from central
+Retrieving nrepl/bencode/1.0.0/bencode-1.0.0.jar from clojars
+Retrieving clojure-complete/clojure-complete/0.2.5/clojure-complete-0.2.5.jar from clojars
+Retrieving nrepl/nrepl/0.5.3/nrepl-0.5.3.jar from clojars
+ 0 | 1 | 2
+===+===+===
+ 3 | 4 | 5
+===+===+===
+ 6 | 7 | 8
+
+Enter [0-8]:
+4
+ 0 | 1 | 2
+===+===+===
+ 3 | X | 5
+===+===+===
+ 6 | 7 | 8
+
+ 0 | 1 | O
+===+===+===
+ 3 | X | 5
+===+===+===
+ 6 | 7 | 8
+
+.
+Exception in thread "main" java.lang.NumberFormatException: For input string: ".", compiling:(/tmp/form-init946414250826869657.clj:1:71)
+        at clojure.lang.Compiler.load(Compiler.java:7142)
+        at clojure.lang.Compiler.loadFile(Compiler.java:7086)
+        at clojure.main$load_script.invoke(main.clj:274)
+        at clojure.main$init_opt.invoke(main.clj:279)
+        at clojure.main$initialize.invoke(main.clj:307)
+        at clojure.main$null_opt.invoke(main.clj:342)
+        at clojure.main$main.doInvoke(main.clj:420)
+        at clojure.lang.RestFn.invoke(RestFn.java:421)
+        at clojure.lang.Var.invoke(Var.java:383)
+        at clojure.lang.AFn.applyToHelper(AFn.java:156)
+        at clojure.lang.Var.applyTo(Var.java:700)
+        at clojure.main.main(main.java:37)
+Caused by: java.lang.NumberFormatException: For input string: "."
+        at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+        at java.lang.Integer.parseInt(Integer.java:569)
+        at java.lang.Integer.<init>(Integer.java:867)
+        at sun.reflect.GeneratedConstructorAccessor1.newInstance(Unknown Source)
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at clojure.lang.Reflector.invokeConstructor(Reflector.java:180)
+        at game.core$get_human_spot.invoke(core.clj:65)
+        at game.core$game.invoke(core.clj:73)
+        at game.core$game.invoke(core.clj:79)
+        at game.core$start_game.invoke(core.clj:90)
+        at game.core$_main.invoke(core.clj:93)
+        at clojure.lang.Var.invoke(Var.java:375)
+        at user$eval5.invoke(form-init946414250826869657.clj:1)
+        at clojure.lang.Compiler.eval(Compiler.java:6703)
+        at clojure.lang.Compiler.eval(Compiler.java:6693)
+        at clojure.lang.Compiler.load(Compiler.java:7130)
+        ... 11 more
