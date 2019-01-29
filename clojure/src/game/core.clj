@@ -1,6 +1,6 @@
 (ns game.core)
 
-  (def board (atom ["0" "1" "2" "3" "4" "5" "6" "7" "8"]))
+  (def board (atom ["0" "1" "2" "3" "4" "5" "6" "7" "8"])) //why an atom
 
   (defn game-over []
    (or (= (get @board 0) (get @board 1) (get @board 2))
@@ -30,20 +30,20 @@
 
   (defn get-computer-move []
    (if (= "4" (get @board 4))
-    (reset! board (assoc @board 4 "O"))
+    (reset! board (assoc @board 4 "O")) //consider swap, the clojure docs don't even mention reset and style guide recommends swap
     (do
-     (let [container []
-      available-spaces (vec (filter identity (for [s @board]
+     (let [container [] // lots of nested branching logic here, consider breaking this up and remove repetition
+      available-spaces (vec (filter identity (for [s @board] //filter on your if here instead of identity
             (do
              (if (and (not (= s "X")) (not (= s "O")))
-              (conj container s))))))
+              (conj container s)))))) //container not used
       results (vec (for [as available-spaces]
           (do
-           (reset! board (assoc @board (Integer. (first as)) "O"))
+           (reset! board (assoc @board (Integer. (first as)) "O")) //why not populate 
            (if (game-over)
             (do
              (reset! best-move (first as))
-             (reset! board (assoc @board (Integer. (first as)) (Integer. (first as)))))
+             (reset! board (assoc @board (Integer. (first as)) (Integer. (first as))))) //lot of repetition
             (do
              (reset! board (assoc @board (Integer. (first as)) "X"))
              (if (game-over)
@@ -62,7 +62,7 @@
    (reset! spot nil)
    (while (not @spot)
     (do
-     (reset! spot (Integer. (read-line)))
+     (reset! spot (Integer. (read-line))) //
      (if (and (not (= (get board @spot) "X")) (not (= (get board @spot) "O")))
       (reset! board (assoc @board @spot "X"))
       (reset! spot nil)))))
