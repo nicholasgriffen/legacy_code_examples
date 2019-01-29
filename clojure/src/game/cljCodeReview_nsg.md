@@ -43,5 +43,5 @@ I removed the container and the conj that builds it and the game ran just the sa
 ### I would love to play test the next iteration
 Even if it means I'll be losing every game. 
 
-Thank you for the game,
+Thank you for the game,  
 nicholasgriffen
