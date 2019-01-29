@@ -39,3 +39,9 @@ I am easily dizzied by nested branching logic and find that approaching the prob
 Something I tried on a hunch: 
 ##### Line 35: (let [container []])
 I removed the container and the conj that builds it and the game ran just the same for me. Artifacts maybe of another strategy, or an idea not yet at fruition?   
+
+### I would love to play test the next iteration
+Even if it means I'll be losing every game. 
+
+Thank you for the game,
+nicholasgriffen
